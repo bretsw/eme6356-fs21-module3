@@ -1,0 +1,26 @@
+{
+    "id": "EABB209C",
+    "path": "~/git/reddit-covid/analysis.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1631589516234.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "611,2",
+        "scrollLine": "608"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1613253291,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1613253291,
+    "read_only": false,
+    "read_only_alternatives": []
+}

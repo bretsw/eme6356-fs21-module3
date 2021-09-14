@@ -1,0 +1,602 @@
+---
+title: "Module 3: Analytics Tools"
+subtitle: "EME6356: Learning & Web Analytics"
+author: "Dr. Bret Staudt Willet"
+date: "September 14, 2021"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    seal: true
+    css: [default, 'custom.css', 'custom-fonts.css']
+    nature:
+      titleSlideClass: [left, bottom]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+usethis::use_git_ignore(c("*.csv", "*.rds"))
+options(htmltools.dir.version = FALSE)
+
+library(knitr)
+library(tidyverse)
+library(xaringan)
+library(fontawesome)
+```
+
+class: inverse, center, middle
+
+**View the slides:** 
+
+[bretsw.github.io/eme6356-module3](https://bretsw.github.io/eme6356-module3)
+
+---
+
+# Data stories
+
+```{r, out.width = "400px", echo = FALSE, fig.align = "center"}
+include_graphics("img/data-story-tweet.png")
+```
+
+<div class="caption">
+Image source: <a href="https://twitter.com/katienotopoulos/status/1435997223603646465">Tweet from Katie Notopoulos</a>
+</div>
+
+---
+
+class: inverse, center, middle
+
+# Welcome to our special guests!
+
+---
+
+# Carl Varnado & Cornell Wright
+
+```{r, out.width = "320px", echo = FALSE, fig.align = "center"}
+include_graphics(c("img/3-carl-varnado.png", "img/3-cornell-wright.jpg"))
+```
+
+---
+
+class: inverse, center, middle
+
+# Module 2 Discussion
+
+---
+
+# Sharing Kudos
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/applause.jpg")
+```
+
+--
+
+- Creating a chart from the readings (`r fa("thumbs-up", fill = "#782F40")` Sean) 
+
+--
+
+- Sharing a meme (`r fa("thumbs-up", fill = "#782F40")` Amy)
+
+--
+
+- Recording with your cameras on (`r fa("thumbs-up", fill = "#782F40")` Many of you)
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#1: <br> Data are Biased
+
+---
+
+# Does data change behavior? 
+
+```{r, out.width = "720px", echo = FALSE, fig.align = "center"}
+include_graphics("img/streetlamp.jpg")
+```
+
+--
+
+*Can data change behavior?* (`r fa("thumbs-up", fill = "#782F40")` Shané & Amy)
+
+---
+
+# Control through Data
+
+```{r, out.width = "600px", echo = FALSE, fig.align = "center"}
+include_graphics("img/puppet.jpg")
+```
+
+--
+
+- Externalization of nature (`r fa("thumbs-up", fill = "#782F40")` Dré)
+
+--
+
+- Disordered eating (`r fa("thumbs-up", fill = "#782F40")` Lori)
+
+---
+
+class: inverse, center, middle
+
+<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://fsu.padlet.org/embed/2be7mvchzccn5l4n" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:480px;display:block;padding:0;margin:0"></iframe></p><div style="padding:8px;text-align:right;margin:0;"><a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank"><img src="https://padlet.net/embeds/made_with_padlet.png" width="86" height="16" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Made with Padlet"></a></div></div>
+
+---
+
+# Self-Report Research
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/streetlamp.jpg")
+```
+
+- Humans are bad at estimating (`r fa("thumbs-up", fill = "#782F40")` Kent)
+
+--
+
+  - (People are also bad at remembering)
+
+--
+
+- People change once they know you're observing (`r fa("thumbs-up", fill = "#782F40")` Carla, Jackie, Shané)
+
+--
+
+### `r fa("arrow-right", fill = "#782F40")` Observer Effect
+
+---
+
+# Unobtrusive Research
+
+```{r, out.width = "450px", echo = FALSE, fig.align = "center"}
+include_graphics("img/telescope.jpg")
+```
+
+--
+
+- Digital trace data from social media
+
+--
+
+- Reports and learning analytics from an LMS
+
+--
+
+### `r fa("arrow-right", fill = "#782F40")` Researcher Bias
+
+---
+
+# Other Tradeoffs with Data
+
+```{r, out.width = "540px", echo = FALSE, fig.align = "center"}
+include_graphics("img/chocolate.jpg")
+```
+
+--
+
+- Breadth vs. Depth:
+
+--
+
+  - "Describe a place that this chocolate reminds of..." (`r fa("thumbs-up", fill = "#782F40")` Kent)
+
+--
+
+  - Trends in global chocolate consumption during the pandemic
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#1: <br> Data are Biased
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#2: <br> Ignorance is Bliss
+
+---
+
+# Better Not to Know?
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/eyes-closed.jpg")
+```
+
+- You might not want to know everything the data can tell you (`r fa("thumbs-up", fill = "#782F40")` Mark)
+
+---
+
+# Better Not to Know?
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/eyes-closed.jpg")
+```
+
+- Once the data exist, you have to:
+
+--
+
+  - Store them
+
+--
+
+  - Search them
+  
+--
+
+  - Make sense of them (`r fa("thumbs-up", fill = "#782F40")` Aisha)
+
+--
+
+  - Prevent exploitation
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#1: <br> Data are Biased
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#2: <br> Ignorance is Bliss
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#3: <br> The Right Question is Everything
+
+---
+
+# Where to Begin?
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/future-research.jpg")
+```
+
+--
+
+- Have to start with the right problem (`r fa("thumbs-up", fill = "#782F40")` Rocco)
+
+--
+
+- What you decide to measure changes things (`r fa("thumbs-up", fill = "#782F40")` Shané)
+
+--
+
+- Data you collect have weight
+
+---
+
+# Looking toward Module 3
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/3-ed.jpg")
+```
+
+--
+
+- Data in education: K-12 and Higher Ed
+
+--
+
+  - What are the right questions for testing? (`r fa("thumbs-up", fill = "#782F40")` Carl)
+  
+--
+
+  - What are the right questions for information security? (`r fa("thumbs-up", fill = "#782F40")` Cornell)
+  
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#1: <br> Data are Biased
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#2: <br> Ignorance is Bliss
+
+---
+
+class: inverse, center, middle
+
+#  Big Idea \#3: <br> The Right Question is Everything
+
+---
+
+class: inverse, center, middle
+
+# Recommendation \#1: <br> Be Curious
+
+---
+
+# Be Curious
+
+```{r, out.width = "420px", echo = FALSE, fig.align = "center"}
+include_graphics("img/curious.jpg")
+```
+
+<div class="caption">
+Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticker from adityolooes RedBubble shop</a>
+</div>
+
+--
+
+- Why did I not drink enough water today? (`r fa("thumbs-up", fill = "#782F40")` Kahiya)
+
+--
+
+- Why was running laborious today? (`r fa("thumbs-up", fill = "#782F40")` Kent)
+
+---
+
+# Be Curious
+
+```{r, out.width = "420px", echo = FALSE, fig.align = "center"}
+include_graphics("img/curious.jpg")
+```
+
+<div class="caption">
+Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticker from adityolooes RedBubble shop</a>
+</div>
+
+- What are the trends in our Flipgrid discussions? (`r fa("thumbs-up", fill = "#782F40")` Jessica)
+
+---
+
+# Flipgrid Transcript Word Cloud
+
+```{r, out.width = "480px", echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center"}
+library(wordcloud)
+library(RColorBrewer)
+
+comment <- "Mark and Aisha. I'm so glad you mentioned the downside of collecting some personal data, because like you, there are some things I kind of know that I don't really want to track because it's probably not good. I'd rather not know, but it also made me think about Flip grid and our little videos here and I'm sure that flip grid is collecting the transcript of all the words that were saying and how cool it. Would be to see a word cloud or some other kind of data of the compilation of all of the the text, or the words that we are mentioning in our flip grid. Replies here. So then I was like now that is something that I would be interested in seeing, so I looked up, flip Grid's privacy policy and they do collect some data, but I couldn't tell if we wanted to. If we could collect data. On our actual responses here, 'cause I think that would be cool."
+
+wordcloud(comment, min.freq = 1, colors = brewer.pal(4, "Dark2"))
+```
+
+(`r fa("thumbs-up", fill = "#782F40")` Jessica)
+
+---
+
+class: inverse, center, middle
+
+# Recommendation \#2: <br> Be Open
+
+---
+
+# Be Open
+
+```{r, out.width = "720px", echo = FALSE, fig.align = "center"}
+include_graphics("img/window.jpg")
+```
+
+--
+
+- To mitigate bias, share what you've done and how you've done it
+
+---
+
+# Social Media Data
+
+```{r, out.width = "720px", echo = FALSE, fig.align = "center"}
+include_graphics("img/twitter-network.png")
+```
+
+--
+
+- This [Medium article by @mmaatttt](https://medium.com/@mmaatttt/mapping-twitter-with-nodexl-and-gephi-2d5300fdbc3b) tries to explain the process
+
+--
+
+- However, NodeXL and Gephi are opaque tools
+
+---
+
+# *Open* Social Media Data
+
+```{r, out.width = "840px", echo = FALSE, fig.align = "center"}
+include_graphics("img/twitter-trend.png")
+```
+
+---
+
+# *Open* Social Media Data
+
+```{r, eval=FALSE}
+library(academictwitteR)
+library(tidytags)
+
+tweets_json <- 
+  academictwitteR::get_all_tweets(
+    query = "#edchat",
+    n = 1500000,
+    page_n = 500,
+    start_tweet = "2019-01-01T00:00:00Z", 
+    end_tweets = "2020-01-01T00:00:00Z",
+    bearer_token = Sys.getenv("TWITTER_BEARER_TOKEN"), 
+    data_path = "edchat-data/"
+  )
+
+tweets_tidy <- 
+  academictwitteR::bind_tweets(data_path = "edchat-data/", 
+                               output_format = "tidy")
+
+edchat_tweets <- 
+  tidytags::lookup_many_tweets(tweets_tidy$tweet_id)
+```
+
+--
+
+<hr>
+
+### My code is [shared openly on GitHub](https://github.com/bretsw/twitter-covid/blob/main/twitter-covid.Rmd)
+
+---
+
+# *Open* Social Media Data
+
+### Flipgrid Transcript Word Cloud
+
+```{r, out.width = "420px", echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center"}
+library(wordcloud)
+library(RColorBrewer)
+
+comment <- "Mark and Aisha. I'm so glad you mentioned the downside of collecting some personal data, because like you, there are some things I kind of know that I don't really want to track because it's probably not good. I'd rather not know, but it also made me think about Flip grid and our little videos here and I'm sure that flip grid is collecting the transcript of all the words that were saying and how cool it. Would be to see a word cloud or some other kind of data of the compilation of all of the the text, or the words that we are mentioning in our flip grid. Replies here. So then I was like now that is something that I would be interested in seeing, so I looked up, flip Grid's privacy policy and they do collect some data, but I couldn't tell if we wanted to. If we could collect data. On our actual responses here, 'cause I think that would be cool."
+
+wordcloud(comment, min.freq = 1, colors = brewer.pal(4, "Dark2"))
+```
+
+(`r fa("thumbs-up", fill = "#782F40")` Jessica)
+
+---
+
+# *Open* Social Media Data
+
+### Flipgrid Transcript Word Cloud
+
+```{r, eval=FALSE}
+library(wordcloud)
+library(RColorBrewer)
+
+comment <- "Mark and Aisha. I'm so glad you mentioned the downside of collecting some personal data, because like you, there are some things I kind of know that I don't really want to track because it's probably not good. I'd rather not know, but it also made me think about Flip grid and our little videos here and I'm sure that flip grid is collecting the transcript of all the words that were saying and how cool it. Would be to see a word cloud or some other kind of data of the compilation of all of the the text, or the words that we are mentioning in our flip grid. Replies here. So then I was like now that is something that I would be interested in seeing, so I looked up, flip Grid's privacy policy and they do collect some data, but I couldn't tell if we wanted to. If we could collect data. On our actual responses here, 'cause I think that would be cool."
+
+wordcloud(comment, min.freq = 1, colors = brewer.pal(4, "Dark2"))
+```
+
+--
+
+<hr>
+
+- *Should apps be black-box data analyzers for you?* (`r fa("thumbs-up", fill = "#782F40")` Lori)
+
+---
+
+class: inverse, center, middle
+
+# Big Ideas <br> and Recommendations
+
+---
+
+# Recap
+
+```{r, out.width = "320px", echo = FALSE, fig.align = "center"}
+include_graphics("img/puzzle-gap.jpg")
+```
+
+--
+
+### Big Ideas
+
+1. Data are Biased
+
+2. Ignorance is Bliss
+
+3. The Right Question is Everything
+
+--
+
+### Recommendations
+
+1. Be Curious
+
+2. Be Open
+
+---
+
+class: inverse, center, middle
+
+# Looking ahead
+
+---
+
+# Semester schedule
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/across-time.jpg")
+```
+
+- Module 4: Social Media Analytics
+
+- Module 5: Data Visualization
+
+- Module 6: Educational Data Mining and Learning Analytics
+
+- Module 7: Challenges in Learning Analytics
+
+- Module 8: Case Discussions
+
+- Module 9: Future of Analytics
+
+---
+
+# Major Assignments
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/build.jpg")
+```
+
+- Flipgrid discussions (8 x 25 points)
+
+- Case discussions (200 points)
+
+- Analytics Practice Activities (3 x 150 points)
+
+- Analytics Problem Plan (150 points)
+
+---
+
+# Major Assignments
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/build.jpg")
+```
+
+- Flipgrid discussions (8 x 25 points): **5 total contributions**
+
+- Case discussions (200 points)
+
+- Analytics Practice Activities (3 x 150 points)
+
+- Analytics Problem Plan (150 points)
+
+---
+
+# Major Assignments
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/build.jpg")
+```
+
+- Flipgrid discussions (8 x 25 points)
+
+- Case discussions (200 points)
+
+- **Analytics Practice Activities (3 x 150 points)** - (a) personal; (b) educational/professional; (c) web/social media
+
+- Analytics Problem Plan (150 points)
+
+---
+
+class: inverse, center, middle
+
+# Questions?
+
+```{r, out.width = "480px", echo = FALSE, fig.align = "center"}
+include_graphics("img/question.jpg")
+```
+
+**What questions can I answer for you now?**
+
+**How can I support you this week?**
+
+<hr>
+
+`r fa("envelope", fill = "white")` [bret.staudtwillet@fsu.edu](mailto:bret.staudtwillet@fsu.edu) | `r fa("twitter", fill = "white")` [@bretsw](https://twitter.com/bretsw) | `r fa("globe", fill = "white")` [bretsw.com](http://bretsw.com)
