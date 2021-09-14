@@ -91,7 +91,7 @@ class: inverse, center, middle
 
 ---
 
-# Does data change behavior? 
+# Do Data Change Behavior? 
 
 ```{r, out.width = "720px", echo = FALSE, fig.align = "center"}
 include_graphics("img/streetlamp.jpg")
