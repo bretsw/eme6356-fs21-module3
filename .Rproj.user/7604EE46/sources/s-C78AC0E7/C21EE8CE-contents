@@ -319,7 +319,7 @@ class: inverse, center, middle
 
 # Be Curious
 
-```{r, out.width = "420px", echo = FALSE, fig.align = "center"}
+```{r, out.width = "320px", echo = FALSE, fig.align = "center"}
 include_graphics("img/curious.jpg")
 ```
 
@@ -335,25 +335,17 @@ Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticke
 
 - Why was running laborious today? (`r fa("thumbs-up", fill = "#782F40")` Kent)
 
----
-
-# Be Curious
-
-```{r, out.width = "420px", echo = FALSE, fig.align = "center"}
-include_graphics("img/curious.jpg")
-```
-
-<div class="caption">
-Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticker from adityolooes RedBubble shop</a>
-</div>
+--
 
 - What are the trends in our Flipgrid discussions? (`r fa("thumbs-up", fill = "#782F40")` Jessica)
 
 ---
 
-# Flipgrid Transcript Word Cloud
+# Be Curious
 
-```{r, out.width = "480px", echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center"}
+### Flipgrid Transcript Word Cloud
+
+```{r, out.width = "420px", echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center"}
 library(wordcloud)
 library(RColorBrewer)
 
@@ -363,6 +355,38 @@ wordcloud(comment, min.freq = 1, colors = brewer.pal(4, "Dark2"))
 ```
 
 (`r fa("thumbs-up", fill = "#782F40")` Jessica)
+
+---
+
+# Be Curious
+
+```{r, out.width = "320px", echo = FALSE, fig.align = "center"}
+include_graphics("img/curious.jpg")
+```
+
+<div class="caption">
+Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticker from adityolooes RedBubble shop</a>
+</div>
+
+> You have to have the data to show. We're a data-driven school. Our numbers speak for themselves. So you could say that you're doing one thing in your class, but if your numbers aren't showing that, then maybe you need to change something you're doing. We look at data with everything else we're doing, and decision we make.
+
+(**3.2 Rutledge & Neal, 2013, p. 121**)
+
+---
+
+# Be Curious
+
+```{r, out.width = "320px", echo = FALSE, fig.align = "center"}
+include_graphics("img/curious.jpg")
+```
+
+<div class="caption">
+Image source: <a href="https://www.redbubble.com/people/adityolooes/shop">Sticker from adityolooes RedBubble shop</a>
+</div>
+
+> Which source(s) of data (self-reported learning dispositions, LMS data, e-tutorials formative tests) provide the most potential to provide timely feedback for students? 
+
+(**3.3 Tempelaar et al., 2015, p. 159**)
 
 ---
 

@@ -1,26 +1,26 @@
 {
-    "id": "EABB209C",
-    "path": "~/git/reddit-covid/analysis.Rmd",
-    "project_path": null,
-    "type": "r_markdown",
+    "id": "D9A79F35",
+    "path": "~/git/eme6356-module3/custom.css",
+    "project_path": "custom.css",
+    "type": "css",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1631589516234.0,
+    "created": 1631586836347.0,
     "source_on_save": false,
-    "relative_order": 3,
+    "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "611,2",
-        "scrollLine": "608"
+        "cursorPosition": "238,21",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1613253291,
+    "lastKnownWriteTime": 1631587686,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1613253291,
+    "last_content_update": 1631587686239,
     "read_only": false,
     "read_only_alternatives": []
 }
